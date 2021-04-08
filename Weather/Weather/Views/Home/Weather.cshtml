@@ -1,0 +1,56 @@
+﻿@model WeatherType
+
+
+<div class="col-sm-12 final" style="background-image:url('@Model.PhotoURL'); opacity: 0.6;">
+    <div style="opacity: 1;">
+        @switch (Model.Climate)
+        {
+            case "Clouds":
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets6.lottiefiles.com/temp/lf20_kOfPKE.json" background="transparent" speed="0.8" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+            case "Clear":
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets6.lottiefiles.com/temp/lf20_Stdaec.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+            case "Rain":
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_X1qyEw.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+            case "Drizzle":
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_jmBauI.json" background="transparent" speed="0.7" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+            case "Thunderstorm":
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets6.lottiefiles.com/temp/lf20_XkF78Y.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+            default:
+                <div class="col-12 lottie">
+                    <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_kljxfos1.json" background="transparent" speed="0.8" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+                break;
+
+        }
+
+        <div id="Weather">
+            @Model.CityName
+            <p> @char.ToUpper(Model.WeatherClimate[0])@Model.WeatherClimate.Substring(1)</p>
+            <p>  @Model.Temperature °C</p>
+            @Html.ActionLink("Back", "Index", "Home", new { @id = "HomeLink" })
+        </div>
+        <div id="Weather">Created by Muzzammil Ghaffar</div>
+
+    </div>
+</div>

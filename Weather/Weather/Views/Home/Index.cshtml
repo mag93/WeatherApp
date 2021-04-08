@@ -1,0 +1,25 @@
+﻿@model CityName
+
+<div style="background-image: url('https://source.unsplash.com/featured/1600x900/?city'); height: 100vh; opacity: 0.6;">
+    <div class="col-sm-12" style="opacity: 1;">
+        <div class="col-12 lottie">
+            <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_kljxfos1.json" background="transparent" speed="0.8" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        </div>
+        @using (Html.BeginForm("Weather", "Home", FormMethod.Post))
+        {
+            <div id="Weather">Weather in your city</div>
+    <div class="col-sm-12 offset-md-3 col-md-6">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        @Html.TextBoxFor(m => m.Name, new { @required = "required", @class = "City form-group", @id = "City", @placeholder = "City Name", @autocomplete="off" })
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+        <button type="submit" class="CityButton form-group">Submit</button>
+    </div>
+            
+        }
+
+        <div id="Weather">Created by Muzzammil Ghaffar</div>
+    </div>
+</div>
